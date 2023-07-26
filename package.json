@@ -1,0 +1,12 @@
+{
+  "name": "KJMD",
+  "packageManager": "yarn@3.6.1",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}
