@@ -18,11 +18,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {\
         "name": "@holy-maps",\
         "reference": "workspace:apps/holy-maps"\
+      },\
+      {\
+        "name": "@galapagos/common",\
+        "reference": "workspace:packages/common"\
       }\
     ],\
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
+      ["@galapagos/common", ["workspace:packages/common"]],\
       ["@holy-maps", ["workspace:apps/holy-maps"]],\
       ["KJMD", ["workspace:."]]\
     ],\
@@ -116,11 +121,22 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@galapagos/common", [\
+        ["workspace:packages/common", {\
+          "packageLocation": "./packages/common/",\
+          "packageDependencies": [\
+            ["@galapagos/common", "workspace:packages/common"],\
+            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
       ["@holy-maps", [\
         ["workspace:apps/holy-maps", {\
           "packageLocation": "./apps/holy-maps/",\
           "packageDependencies": [\
             ["@holy-maps", "workspace:apps/holy-maps"],\
+            ["@galapagos/common", "workspace:packages/common"],\
             ["@types/node", "npm:20.4.5"],\
             ["@types/react", "npm:18.2.16"],\
             ["@types/react-dom", "npm:18.2.7"],\

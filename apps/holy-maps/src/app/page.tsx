@@ -1,10 +1,12 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import { sayHello } from '@galapagos/common'
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
+        <h1>{sayHello()}</h1>
         <p>
           Get started by editing&nbsp;
           <code className={styles.code}>src/app/page.tsx</code>

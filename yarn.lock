@@ -63,10 +63,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@galapagos/common@workspace:^, @galapagos/common@workspace:packages/common":
+  version: 0.0.0-use.local
+  resolution: "@galapagos/common@workspace:packages/common"
+  dependencies:
+    typescript: ^5.1.6
+  languageName: unknown
+  linkType: soft
+
 "@holy-maps@workspace:apps/holy-maps":
   version: 0.0.0-use.local
   resolution: "@holy-maps@workspace:apps/holy-maps"
   dependencies:
+    "@galapagos/common": "workspace:^"
     "@types/node": 20.4.5
     "@types/react": 18.2.16
     "@types/react-dom": 18.2.7
