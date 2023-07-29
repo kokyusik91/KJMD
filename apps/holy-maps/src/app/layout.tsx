@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,13 +17,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'white'
-        }}></div>
+      <body className={inter.className}>
+        <nav>
+          <Link href={'/ㅇ'}>홈</Link>
+          <Link href={'/maps'}>지도</Link>
+          <Link href={'/dashboard'}>대시보드</Link>
+        </nav>
+        <main>{children}</main>
+        <footer>고규식 전체 페이지 푸터</footer>
+      </body>
     </html>
   )
 }
